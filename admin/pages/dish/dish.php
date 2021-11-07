@@ -20,7 +20,7 @@
 					<div id="coupon_error"></div>
 					<div class="form-group">
 						<label>Dish</label>
-						<input type="text" id="dish" name="dish" class="form-control" placeholder="Enter Dish Type">
+						<input type="text" id="dish" name="dish" class="form-control" placeholder="Enter Dish Type" required>
 					</div>
 					<div class="form-group">
 						<label>Detailes</label>
@@ -37,7 +37,20 @@
 					<div class="form-group">				
 						<input type="hidden" id="status" name="status" value="1">
 					</div>
-					<div id="alert"></div>			
+					<div id="alert"></div>
+					<label>price</label>					
+					<div class="form-group" id="add_box">											
+						<div class="row" >							
+							<div class="col-4 mb-2">
+								<input type="text" class="form-control" name="attribute[]" placeholder="Enter Attribute">
+							</div>
+							<div class="col-4">
+								<input type="text" class="form-control" name="price[]" placeholder="Enter Price">
+							</div>
+							<button type="button" class="btb btn-warning mb-2" id="add_more">Add More</button>
+
+						</div>
+					</div>
 					<div class="d-flex justify-content-end">
 						<div id="error_msg" style="height:10px"></div>
 						<button type="submit" name="add_dish" id="add_dish" class="btn btn-primary mr-2" data-dismiss="modal">Submit</button>

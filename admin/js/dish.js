@@ -47,12 +47,12 @@ $("#add_dish").on("click", function(){
 		processData: false,
 		success: function(data){
 			console.log(data);				
-					show_dish();			
-					$("#dish_form").trigger("reset");
-					$("#alert_msg").html("<h4 class='text-success text-center mb-3 '>Add Successfully..</h4>");
-					setTimeout(function(){ $("#alert_msg").html("") }, 2000);				
-				}
-			});
+			show_dish();			
+			$("#dish_form").trigger("reset");
+			$("#alert_msg").html("<h4 class='text-success text-center mb-3 '>Add Successfully..</h4>");
+			setTimeout(function(){ $("#alert_msg").html("") }, 2000);				
+		}
+	});
 });
 
 
@@ -71,3 +71,23 @@ $(document).on("click", "#delete_dish", function(){
 		});
 	}
 });
+
+$("#add_more").on("click", function(){
+
+	var html = '';
+            html += '<div id="inputFormRow" class="row">';
+            html += '<div class="col-4 mb-2">';
+            html += '<input type="text" class="form-control" placeholder="Enter Attribute" name="attribute[]">';
+            html += '</div>';
+            html += '<div class="col-4">';
+            html += '<input type="text" class="form-control" placeholder="Enter Price" name="price[]">';
+            html += '</div>';
+            html += '<button id="removeRow" type="button" class="btn btn-danger mb-2">Remove</button>';           
+            html += '</div>';
+
+            $('#add_box').append(html);
+           
+});
+$(document).on('click', '#removeRow', function () {
+            $(this).closest('#inputFormRow').remove();
+        });

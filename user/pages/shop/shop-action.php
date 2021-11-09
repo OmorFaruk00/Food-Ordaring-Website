@@ -28,8 +28,8 @@ if(isset($_POST['selected_category'])){
 					<div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">                
 						<div class="product-wrapper"> 
 							<div class="product-img">                                        
-								<img src="../admin/.<?php echo $row['image']; ?>" alt="Image Not Found" width="auto"; height= "300px">                                        
-								<div class="product-action">
+								<img src="../admin/.<?php echo $row['image']; ?>" alt="Image Not Found" width="auto"; height= "200px">                                        
+								<!-- <div class="product-action">
 									<div class="pro-action-left">
 										<a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
 									</div>
@@ -37,12 +37,20 @@ if(isset($_POST['selected_category'])){
 										<a title="Wishlist" href="wishlist.html"><i class="ion-ios-heart-outline"></i></a>
 										<a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<div class="product-content">
-								<h4><?php echo $row["dish"]; ?></h4>                                       
+								<h4><?php echo $row["dish"]; ?></h4>								                                       
 								<div class="product-price-wrapper">
-									<span>$200.00</span>
+									<?php
+									$dish_detailes ="SELECT * FROM  `dish detailes` WHERE `dish_id` ='".$row['id']."' AND status=1"; 
+                                     $result1 = $conn->query($dish_detailes);
+                                     while($row1 = $result1->fetch_assoc()){  ?>									
+									<label class="radio-inline mr-2">
+										<input type="radio" name="optradio" class="mr-1"><span><?php echo $row1["attribute"]; ?>(<?php echo $row1["price"]; ?>)</span>
+									</label>									
+								<?php } ?>
+									
 								</div>
 							</div>                                   
 						</div>

@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
     
-    Template Name: Billy - Food & Drink eCommerce Bootstrap4 Template
+    Template Name:  Food & Drink eCommerce Bootstrap4 Template
     Version: 2
     
 -----------------------------------------------------------------------------------
@@ -27,7 +27,7 @@
 
 
 /*-----------------------------
-    1. Template default css
+    1. default css
 -------------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,500,700,900');
@@ -233,13 +233,12 @@ textarea {
 
 input {
     background: #eceff8;
-    border: 2px solid #eceff8;
-    height: 45px;
+    border: 2px solid #eceff8;   
     box-shadow: none;
     padding-left: 10px;
     font-size: 14px;
-    color: #626262;
-    width: 100%;
+    color: #626262;   
+    
 }
 select {
     width: 100%;
@@ -4043,6 +4042,10 @@ h4.grand-totall-title span {
 .login-register-tab-list.nav a {
     position: relative;
 }
+.login-register-form input{
+    height: 45px;
+    width: 100%;
+}
 .login-register-tab-list.nav a::before {
     background-color: #454545;
     bottom: 5px;
@@ -4576,6 +4579,7 @@ h5.panel-title span {
     height: 45px;
     padding-left: 20px;
     font-size: 14px;
+    width: 100%;
 }
 .contact-form-style input::-moz-placeholder,
 .contact-form-style textarea::-moz-placeholder {

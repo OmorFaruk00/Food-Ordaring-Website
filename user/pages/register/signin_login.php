@@ -30,15 +30,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="lg2" class="tab-pane">
-                                <div class="login-form-container">
+                            <div id="lg2" class="tab-pane">                                
+                                <div class="login-form-container">                                    
                                     <div class="login-register-form">
-                                        <form action="#" method="post">
-                                            <input type="text" name="user-name" placeholder="Username">
-                                            <input type="password" name="user-password" placeholder="Password">
-                                            <input name="user-email" placeholder="Email" type="email">
+                                        <form action="#" method="post" id="register_form">
+                                            <div class="text-center text-success mb-3 h4" id="response"></div>
+                                            <input type="text" name="name" placeholder="Username">
+                                            <input type="password" name="password" placeholder="Password">
+                                            <input type="text"  name="email" placeholder="Email">
+                                            <div id="email_error" style="margin-bottom: 20px; margin-top: -25px; color: red;"></div>
+                                            <input type="number" name="mobile" placeholder="Phone">
+                                            <input type="hidden" name="status"  value="1">
+                                            <input type="hidden"name="type" value="register">
                                             <div class="button-box">
-                                                <button type="submit"><span>Register</span></button>
+                                                <button type="button" id="register_btn">Register</button>
                                             </div>
                                         </form>
                                     </div>
@@ -51,6 +56,7 @@
         </div>
     </div>
     <?php include '../../layout/footer.php'?>
+    <script src="assets/js/register.js"></script>
     
     
     

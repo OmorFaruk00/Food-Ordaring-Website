@@ -36,5 +36,15 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/user_menu.js"></script>
+<!--     <script>
+    $(document).ready(function () {
+        setTimeout(function(){
+            var session = "<?php echo $_SESSION['username'];?>";
+            if(session != null){
+                document.getElementById("user_account").innerHTML = '<ul><li class="top-hover"><a href="#" class="text-danger">'+session+'<i class="ion-chevron-down text-danger"></i></a><ul><li><a href="wishlist.php">Wishlist  </a></li><li><a href="#" onclick="logout()">Logout</a></li><li><a href="my-account.php">my account</a></li></ul></li></ul>';
+            }
+        }, 1000);
+    })
+</script> -->
 </body>
 </html>  

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header class="header-area">        
     <div class="header-middle">
         <div class="container">
@@ -68,17 +69,12 @@
                             <a href="#" onclick="signin_login()">
                                 <div class="header-icon-style">
                                     <i class="icon-user icons ml-5 mr-3"></i>
-                                    <div class="account-curr-lang-wrap f-right">
-                                        <ul>                                    
-                                            <li class="top-hover"><a href="#" class="text-danger">Omor <i class="ion-chevron-down text-danger"></i></a>
-                                                <ul>
-                                                    <li><a href="wishlist.php">Wishlist  </a></li>
-                                                    <li><a href="login-register.php">Login</a></li>
-                                                    <li><a href="login-register.php">Register</a></li>
-                                                    <li><a href="my-account.php">my account</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <div class="account-curr-lang-wrap f-right" id="user_account">
+                                        <?php
+                                        if (isset($_SESSION['username'])) {
+                                            echo '<ul><li class="top-hover"><a href="#" class="text-danger">'.$_SESSION['username'].'<i class="ion-chevron-down text-danger"></i></a><ul><li><a href="wishlist.php">Wishlist  </a></li><li><a href="#" onclick="logout()">Logout</a></li><li><a href="my-account.php">my account</a></li></ul></li></ul>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>                                        
                             </a>
@@ -127,3 +123,4 @@
     </div>
     <!-- mobile-menu-area-end -->
 </header>
+<script src="assets/js/register.js"></script>

@@ -8,6 +8,7 @@ $result=$conn->query($sql);
 if($result->num_rows > 0 ){
 	while($row = $result->fetch_assoc()){
 		$_SESSION['is_login'] = true;
+		$_SESSION['user_id'] = $row['id'];  
 		$_SESSION['username'] = $row['name'];  
 
 		$db_pass = $row['password'];

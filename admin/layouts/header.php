@@ -1,4 +1,4 @@
-<div id="admin-header">
+<div id="admin-header" class="fixed-top">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">

@@ -5,15 +5,16 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-12 col-sm-4">
                     <div class="logo">
-                        <a href="index.html">
-                            <img alt="" src="assets/img/logo/logo.png">
+                        <a href="#" onclick="shop()">
+                            <!-- <img alt="" src="assets/img/logo/logo.png"> -->
+                            <h4>Food Ordaring</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8 col-12 col-sm-8">
                     <div class="header-middle-right f-right">                                
                         <div class="header-wishlist">
-                            <a href="wishlist.php">
+                            <a href="#">
                                 <div class="header-icon-style">
                                     <i class="icon-heart icons"></i>
                                 </div>                                        
@@ -22,7 +23,7 @@
                         <div class="header-cart">
                             <a href="#">
                                 <div class="header-icon-style">
-                                    <i class="icon-handbag icons"></i>
+                                    <i class="fa fa-cart-plus"></i>
                                     <span class="count-style">0</span>
                                 </div>                                        
                             </a>
@@ -60,19 +61,19 @@
                                     <h4>Total : <span class="shop-total">$260.00</span></h4>
                                 </div>
                                 <div class="shopping-cart-btn">
-                                    <a href="cart-page.html">view cart</a>
-                                    <a href="checkout.html">checkout</a>
+                                    <a href="#">view cart</a>
+                                    <a href="#">checkout</a>
                                 </div>
                             </div>                                    
                         </div>                                
                         <div class="header-login">
                             <a href="#" onclick="signin_login()">
-                                <div class="header-icon-style">
-                                    <i class="icon-user icons ml-5 mr-3"></i>
+                                <div class="header-icon-style">                                   
+                                    <i class="fa fa-user ml-5 mr-4 -dark"></i>
                                     <div class="account-curr-lang-wrap f-right" id="user_account">
                                         <?php
-                                        if (isset($_SESSION['username'])) {
-                                            echo '<ul><li class="top-hover"><a href="#" class="text-danger">'.$_SESSION['username'].'<i class="ion-chevron-down text-danger"></i></a><ul><li><a href="wishlist.php">Wishlist  </a></li><li><a href="#" onclick="logout()">Logout</a></li><li><a href="my-account.php">my account</a></li></ul></li></ul>';
+                                        if (isset($_SESSION['username'])) {                                            
+                                            echo '<ul><li class="top-hover"><a href="#" class="text-danger">Hi '.$_SESSION['username'].'<i class="ion-chevron-down text-danger"></i></a><ul><li><a href="#" onclick="wishlist()">Wishlist</a></li><li><a href="#" onclick="logout()">Logout</a></li><li><a href="#">my account</a></li></ul></li></ul>';
                                         }
                                         ?>
                                     </div>
@@ -94,7 +95,7 @@
                                 <li class="top-hover"><a href="index.php">home</a></li>                  
                                 <li class="mega-menu-position top-hover"><a href="#" onclick="shop()">Shop</a></li>          
                                 <li><a href="#" onclick="about()">about-us</a></li>
-                                <li><a href="#" onclick="contact()">contact us</a></li>                                        
+                                <li><a href="#" onclick="contact()">contact-us</a></li>                                        
                             </ul>
                         </nav>
                     </div>
@@ -113,7 +114,7 @@
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="#" onclick="shop()"> Shop </a></li>
                                 <li><a href="#" onclick="about()">about-us</a></li>
-                                <li><a href="contact.php">contact us</a></li>
+                                <li><a href="contact.php">contact-us</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -123,4 +124,3 @@
     </div>
     <!-- mobile-menu-area-end -->
 </header>
-<script src="assets/js/register.js"></script>

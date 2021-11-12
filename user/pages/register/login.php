@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include "../dbconnection.php";
+include "../function.php"; 
 $username = mysqli_real_escape_string($conn, $_POST['name']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 $sql = "SELECT * FROM `user` WHERE `name` = '$username'";
@@ -9,15 +10,20 @@ if($result->num_rows > 0 ){
 	while($row = $result->fetch_assoc()){
 		$_SESSION['is_login'] = true;
 		$_SESSION['user_id'] = $row['id'];  
-		$_SESSION['username'] = $row['name'];  
-
+		$_SESSION['username'] = $row['name'];
 		$db_pass = $row['password'];
 		if (password_verify($password, $db_pass)) {
 			$arr = array('status'=>'success', 'msg'=>'Login Successfull', 'field'=>'login_response','username'=>$row['name']);
 			echo json_encode($arr);
+			if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){
+				foreach ($_SESSION['cart'] as $key => $value) {
+					manage_user_cart($_SESSION['user_id'], $value['qty'], $key);
+					
+				}
+			}
 		}
 		else{
-			$arr = array('status'=>'error', 'msg'=>'Login failed', 'field'=>'login_response');
+			$arr = array('status'=>'error', 'msg'=>'<h5 class="text-danger">Username And Password Are Not Match</h5>', 'field'=>'login_response');
 			echo json_encode($arr);
 
 		}

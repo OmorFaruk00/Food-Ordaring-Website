@@ -46,3 +46,13 @@ function contact(){
 		}
 	});
 }
+function wishlist(){
+	$.ajax({
+		url: "pages/wishlist/wishlist.php",
+		type: "GET",
+		cache: false,
+		success: function(response){
+			$('#main_content').html(response);               
+		}
+	});
+}

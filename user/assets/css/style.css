@@ -1542,7 +1542,7 @@ textarea:focus {
 .account-curr-lang-wrap ul li a {
     color: #fff;
     display: inline-block;
-    line-height: 44px;
+    line-height: 35px;
 }
 .account-curr-lang-wrap ul li:hover > a {
     color: #e02c2b;
@@ -1632,7 +1632,7 @@ textarea:focus {
 
 /* header bottom cart */
 .header-middle {
-    padding: 30px 0 26px;
+    padding: 15px 0 10px;
 }
 .header-middle-right {
     display: flex;
@@ -1665,7 +1665,7 @@ textarea:focus {
 }
 .header-icon-style i {
     color: #303d4e;
-    font-size: 34px;
+    font-size: 25px;
 }
 .cart-text {
     display: inline-block;

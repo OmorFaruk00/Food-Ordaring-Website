@@ -32,30 +32,25 @@ if(isset($_POST['selected_category'])){
 								
 							</div>
 							<div class="product-content">
-								<form id="dish_detailes">
-								<h5><?php echo $product_row["dish"]; ?></h5>				                                       
-								<div class="product-price-wrapper">
-									<?php
-									$dish_detailes ="SELECT * FROM  `dish detailes` WHERE `dish_id` ='".$product_row['id']."' AND status=1"; 
-									$result1 = $conn->query($dish_detailes);
-									while($detailes_row = $result1->fetch_assoc()){  ?>									
-										<label class="radio-inline mr-2">
-											<input type="radio" name="radio_attr<?php echo $product_row['id']; ?>" id="radio" value='<?php echo $detailes_row["id"]; ?>' class="mr-1"><span><?php echo $detailes_row["attribute"]; ?>(<?php echo $detailes_row["price"]; ?>)</span>
-										</label>
-									<?php } ?>									
-								</div>
-								<div class="d-flex justify-content-end w-100 mt-3">
-								 <label class="pt-2 text-danger h6">Qty:</label>										
-										<select class="select w-25" id="qty<?php echo $product_row['id']; ?>">
-										 <?php for($i=1; $i <=10; $i++){ 
-										 	echo '<option>'.$i.'</option>';
-										 } ?>											
-										</select>
-									
-									<button type="button"class="btn btn-danger ml-3 w-75" id="cart" onclick="add_to_cart('<?php echo $product_row['id']; ?>')"><i class="fa fa-cart-plus mr-3 fx-5"></i>  Add To Cart</button>
-								</div>
-							</div> 
-							 </form>                                 
+								<form id="dish_detailes_form">
+									<h5><?php echo $product_row["dish"]; ?></h5>				                                       
+									<div class="product-price-wrapper">
+										<?php
+										$dish_detailes ="SELECT * FROM  `dish detailes` WHERE `dish_id` ='".$product_row['id']."' AND status=1"; 
+										$result1 = $conn->query($dish_detailes);
+										while($detailes_row = $result1->fetch_assoc()){  ?>									
+											<label class="radio-inline mr-2">
+												<input type="radio" name="radio_attr<?php echo $product_row['id']; ?>" id="radio" value='<?php echo $detailes_row["id"]; ?>' class="mr-1"><span><?php echo $detailes_row["attribute"]; ?>(<?php echo $detailes_row["price"]; ?>)</span>
+											</label>
+										<?php } ?>									
+									</div>
+									<div class="d-flex justify-content-end w-100 mt-3">										
+										<label class="pt-1 text-danger h6 mr-1">Qty:</label>
+										<input type="number" class="w-25" id="qty<?php echo $product_row['id']; ?>" style="height: 30px;background:#fff; ">
+										<button type="button"class="btn btn-danger ml-3 w-75" id="cart" onclick="add_to_cart('<?php echo $product_row['id']; ?>')"><i class="fa fa-cart-plus mr-3 fx-5"></i>  Add To Cart</button>
+									</div>
+								</div> 
+							</form>                                 
 						</div>
 					</div>
 				<?php } ?>

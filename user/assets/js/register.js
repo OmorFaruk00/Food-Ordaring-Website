@@ -71,7 +71,7 @@ $("#user_login").on("click", function(){
 
 				$("#"+data.field).html(data.msg);
 					// setTimeout(function(){$("#email_error").html('');}, 2000);
-				}else if(data.status == 'success'){					
+				}else if(data.status == 'success'){				    					
 					$("#login_form").trigger('reset');
 					$("#"+data.field).html(data.msg);
 					// shop();
@@ -95,7 +95,7 @@ function logout(){
 		url:"pages/register/logout.php",
 		type:"POST",
 		success : function(result){	
-			document.getElementById("user_account").innerHTML ='';
+			$("#user_account").html("");
 		}
 	});
 }

@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <header class="header-area">        
-    <div class="header-middle">
+    <div class="header-middle bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-12 col-sm-4">

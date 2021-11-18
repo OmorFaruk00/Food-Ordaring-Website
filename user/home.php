@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Food Ordaring website</title>
+    <title>Food Ordaring Website</title>
     <meta name="description" content="">
     <meta name="robots" content="noindex, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +36,9 @@
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/register.js"></script> 
     <script src="assets/js/user_menu.js"></script>
+
     <!-- <?php include 'layout/footer.php'?> -->
 </body>
 </html>  

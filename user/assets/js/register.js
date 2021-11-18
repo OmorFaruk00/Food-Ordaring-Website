@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+	top_menu();	
+});
+
 $("#register_btn").on("click", function(){
 
 	var name = $("#name").val();
@@ -60,42 +64,31 @@ $("#register_btn").on("click", function(){
 $("#user_login").on("click", function(){
 	var name = $("#user_name").val();
 	var password = $("#user_password").val();
-
 	$.ajax({
 		url:"pages/register/login.php",
 		type:"POST",		
 		data:{name:name, password:password},
 		success : function(result){												
 			var data = JSON.parse(result);
-			if(data.status == 'error'){			
+			if(data.status == 'error'){
+				$("#"+data.field).html(data.msg);					
+			}else if(data.status == 'success'){				    					
+				$("#login_form").trigger('reset');
+				$("#"+data.field).html(data.msg);					
+				top_menu();
+				setTimeout(function(){ shop();}, 2000);		
 
-				$("#"+data.field).html(data.msg);
-					// setTimeout(function(){$("#email_error").html('');}, 2000);
-				}else if(data.status == 'success'){				    					
-					$("#login_form").trigger('reset');
-					$("#"+data.field).html(data.msg);
-					// shop();
-					setTimeout(function(){ shop();}, 2000);
-					user_account(data.username);
-				}
 			}
-		});
+		}
+	});
 });
 
-function user_account(username){
-	if(username != null){
-		document.getElementById("user_account").innerHTML = '<ul><li class="top-hover"><a href="#" class="text-danger">'+username+'<i class="ion-chevron-down text-danger"></i></a><ul><li><a href="wishlist.php">Wishlist  </a></li><li><a href="#" onclick="logout()">Logout</a></li><li><a href="my-account.php">my account</a></li></ul></li></ul>';
-	}
-}
-
-
-
-function logout(){
+function logout(){	
 	$.ajax({
 		url:"pages/register/logout.php",
 		type:"POST",
 		success : function(result){	
-			$("#user_account").html("");
+			$("#user_account").html("");			
 		}
 	});
 }

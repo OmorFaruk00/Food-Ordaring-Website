@@ -23,32 +23,22 @@ if(isset($_POST['selected_category'])){
 	<div class="grid-list-product-wrapper">
 		<div class="product-grid product-view pb-20">
 			<div class="row">
-				<?php while($product_row = $result->fetch_assoc()){  ?> 
+				<?php while($dish_row = $result->fetch_assoc()){  ?> 
 
-					<div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">                
-						<div class="product-wrapper"> 
+					<div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30 shadow"  >                
+						<div class="product-wrapper" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"> 
 							<div class="product-img">                                        
-								<img src="../admin/.<?php echo $product_row['image']; ?>" alt="Image Not Found" width="auto"; height= "200px">                                    
+								<img src="../admin/.<?php echo $dish_row['image']; ?>" alt="Image Not Found" width="auto"; height= "200px">
 								
 							</div>
-							<div class="product-content">
+							<div class="product-content p-3">
 								<form id="dish_detailes_form">
-									<h5><?php echo $product_row["dish"]; ?></h5>				                                       
-									<div class="product-price-wrapper">
-										<?php
-										$dish_detailes ="SELECT * FROM  `dish detailes` WHERE `dish_id` ='".$product_row['id']."' AND status=1"; 
-										$result1 = $conn->query($dish_detailes);
-										while($detailes_row = $result1->fetch_assoc()){  ?>									
-											<label class="radio-inline mr-2">
-												<input type="radio" name="radio_attr<?php echo $product_row['id']; ?>" id="radio" value='<?php echo $detailes_row["id"]; ?>' class="mr-1"><span><?php echo $detailes_row["attribute"]; ?>(<?php echo $detailes_row["price"]; ?>)</span>
-											</label>
-										<?php } ?>									
-									</div>
-									<div class="d-flex justify-content-end w-100 mt-3">										
-										<label class="pt-1 text-danger h6 mr-1">Qty:</label>
-										<input type="number" class="w-25" id="qty<?php echo $product_row['id']; ?>" style="height: 30px;background:#fff; ">
-										<button type="button"class="btn btn-danger ml-3 w-75" id="cart" onclick="add_to_cart('<?php echo $product_row['id']; ?>')"><i class="fa fa-cart-plus mr-3 fx-5"></i>  Add To Cart</button>
-									</div>
+									<h5><?php echo $dish_row["dish"]; ?></h5>				                                       
+									<div class="product-price-wrapper d-flex justify-content-between">
+										<h5>Price</h5>
+										<h5><span>&#2547;</span> <?php echo $dish_row["price"]; ?></h5>
+									</div>									
+									<button type="button"class="add-to-cart btn btn-danger btn-block mt-3"   data-id="<?php echo $dish_row["id"]; ?>"><i class="fa fa-cart-plus mr-3 fx-5"></i>  Add To Cart</button>									
 								</div> 
 							</form>                                 
 						</div>
@@ -61,5 +51,6 @@ if(isset($_POST['selected_category'])){
 }
 
 ?>
+<script src="assets/js/cart.js"></script>
 
 

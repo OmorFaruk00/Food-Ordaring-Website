@@ -12,80 +12,14 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8 col-12 col-sm-8">
-                    <div class="header-middle-right f-right">                                
-                        <div class="header-wishlist">
-                            <a href="#">
-                                <div class="header-icon-style">
-                                    <i class="icon-heart icons"></i>
-                                </div>                                        
-                            </a>
-                        </div>
-                        <div class="header-cart">
-                            <a href="#">
-                                <div class="header-icon-style">
-                                    <i class="fa fa-cart-plus"></i>
-                                    <span class="count-style">0</span>
-                                </div>                                        
-                            </a>
-                            <div class="shopping-cart-content">
-                                <ul>
-                                    <li class="single-shopping-cart">
-                                        <div class="shopping-cart-img">
-                                            <a href="#"><img alt="" src="assets/img/cart/cart-1.jpg"></a>
-                                        </div>
-                                        <div class="shopping-cart-title">
-                                            <h4><a href="#">Phantom Remote </a></h4>
-                                            <h6>Qty: 02</h6>
-                                            <span>$260.00</span>
-                                        </div>
-                                        <div class="shopping-cart-delete">
-                                            <a href="#"><i class="ion ion-close"></i></a>
-                                        </div>
-                                    </li>
-                                    <li class="single-shopping-cart">
-                                        <div class="shopping-cart-img">
-                                            <a href="#"><img alt="" src="assets/img/cart/cart-2.jpg"></a>
-                                        </div>
-                                        <div class="shopping-cart-title">
-                                            <h4><a href="#">Phantom Remote</a></h4>
-                                            <h6>Qty: 02</h6>
-                                            <span>$260.00</span>
-                                        </div>
-                                        <div class="shopping-cart-delete">
-                                            <a href="#"><i class="ion ion-close"></i></a>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="shopping-cart-total">
-                                    <h4>Shipping : <span>$20.00</span></h4>
-                                    <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                </div>
-                                <div class="shopping-cart-btn">
-                                    <a href="#">view cart</a>
-                                    <a href="#">checkout</a>
-                                </div>
-                            </div>                                    
-                        </div>                                
-                        <div class="header-login">
-                            <a href="#" onclick="signin_login()">
-                                <div class="header-icon-style">                                   
-                                    <i class="fa fa-user ml-5 mr-4 -dark"></i>
-                                    <div class="account-curr-lang-wrap f-right" id="user_account">
-                                        <?php
-                                        if (isset($_SESSION['username'])) {                                            
-                                            echo '<ul><li class="top-hover"><a href="#" class="text-danger">Hi '.$_SESSION['username'].'<i class="ion-chevron-down text-danger"></i></a><ul><li><a href="#" onclick="wishlist()">Wishlist</a></li><li><a href="#" onclick="logout()">Logout</a></li><li><a href="#">my account</a></li></ul></li></ul>';
-                                        }
-                                        ?>
-                                    </div>
-                                </div>                                        
-                            </a>
-                        </div>
+                    <div id="show_top_menu">
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="header-bottom transparent-bar black-bg">
+    <div class="header-bottom black-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-12">
@@ -124,3 +58,4 @@
     </div>
     <!-- mobile-menu-area-end -->
 </header>
+<script src="assets/js/user_menu.js"></script>

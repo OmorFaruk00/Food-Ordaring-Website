@@ -1,4 +1,6 @@
-<div class="footer-area black-bg-2 pt-20">         
+
+<footer>
+    <div class="footer-area black-bg-2 pt-20">         
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-7">
@@ -22,3 +24,4 @@
                 </div>            
         </div>
     
+</footer>

@@ -1,7 +1,17 @@
 $( document ).ready(function() {
+	top_menu();
 	shop();
 });
-
+function top_menu(){	
+	$.ajax({
+		url: "layout/top_menu.php",
+		type: "GET",
+		cache: false,
+		success: function(response){
+			$("#show_top_menu").html(response);              
+		}
+	});
+}
 
 function shop(){	
 	$.ajax({
@@ -49,6 +59,16 @@ function contact(){
 function wishlist(){
 	$.ajax({
 		url: "pages/wishlist/wishlist.php",
+		type: "GET",
+		cache: false,
+		success: function(response){
+			$('#main_content').html(response);               
+		}
+	});
+}
+function manage_cart(){
+   $.ajax({
+		url: "pages/cart/cart.php",
 		type: "GET",
 		cache: false,
 		success: function(response){

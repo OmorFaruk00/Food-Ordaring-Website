@@ -52,6 +52,7 @@
                                         <td class="product-remove text-center">                                    
                                             <a href="#"><i class="fa fa-times remove-cart-item"  data-id="<?php echo $row["id"]; ?>" onclick="remove_cart()"></i></a>
                                         </td>
+                                        
                                     </tr>
                                 </tbody>                                
                                 <?php        

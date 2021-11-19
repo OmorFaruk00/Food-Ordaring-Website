@@ -6,7 +6,7 @@
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                             <th>ORDER No.</th>
-                            <th width="300px">Dish Details</th>
+                            <th>Dish Details</th>
                             <th>QTY.</th>
                             <th>Total Amount</th>
                             <th>Customer Details</th>
@@ -33,28 +33,27 @@
                                         <b>Quantity: </b><?php echo $dish_qty[$p]; ?>
                                         <br>
                                     <?php } ?>
-
                                     </td>
                                     <td><?php echo array_sum($dish_qty); ?></td>
                                     <td><?php echo $row['total_amount']; ?></td>
                                     <td>
                                         <b>ID : </b><?php echo $row['user_id']; ?><br>
                                         <b>Name : </b><?php echo $row['user_name']; ?><br>
-                                        <b>Address : </b><?php echo $row['user_address']; ?><br>
-                                        
+                                        <b>Address : </b><?php echo $row['user_address']; ?><br>                                        
                                     </td>
                                     <td><?php echo $row['order_date']; ?></td>                                    
                                     <td><?php echo $row['delivery_date']; ?></td>                                    
                                     <td class=" d-flex justify-content-between">
                                         <?php
                                             if($row['status'] == '1'){ ?>
-                                                <span>Delivered</span>
+                                                <span class="text-success">Delivered</span>
                                         <?php }else{ ?>
                                                 <a class="btn btn-sm btn-primary order_complete" href="" data-id="<?php echo $row['order_id']; ?>">Pending</a>
                                         <?php } ?>
-                                        <i class="fa fa-trash btn btn-danger ml-3" onclick="order_cencel()"></i>
-                                    </td>
-                                    
+                                       <?php  if($row['status'] == '0'){ ?>
+                                        <button class="btn btn-danger ml-3" onclick="order_cancel()">Cancel Order</button>
+                                        <?php } ?>
+                                    </td>                                    
                                 </tr>
                             <?php } 
                             ?>

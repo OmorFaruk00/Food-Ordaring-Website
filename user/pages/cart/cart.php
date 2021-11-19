@@ -89,5 +89,5 @@
 <?php }else{
     echo "<h3 class='text-center mt-3 text-danger font-weight-bold'>Your Cart Is Empty</h3>";
 } ?>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="assets/js/cart.js"></script>

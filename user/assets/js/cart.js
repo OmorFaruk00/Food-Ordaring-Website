@@ -60,7 +60,7 @@ $('.item_qty').change(function(){
 
 });
 
-function checkout(){      
+function checkout(){ 
  var qty = [];
  var id = [];
  var total = $(".total-amount").text();
@@ -89,7 +89,7 @@ function checkout(){
         delivery_date:delivery_date
     },
     success: function(data){
-        console.log(data);
+        swal({ title: "Congratulation", text: "Your order is Succesfull", icon: "success", timer:2000, });
 
     }
 }); 

@@ -1,7 +1,6 @@
 <?php 
 include "../dbconnection.php";
-$sql = "SELECT dish.*, category.category FROM dish, category WHERE dish.category_id = category.id";
-// $sql = "SELECT * FROM dish";
+$sql = "SELECT dish.*, category.category FROM dish, category WHERE dish.category_id = category.id order by id";
 $result = $conn->query($sql);
 if($result->num_rows > 0){
 	?>

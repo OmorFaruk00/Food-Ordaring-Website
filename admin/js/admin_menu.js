@@ -91,7 +91,17 @@ function dish(){
 		}
 	});
 }
-
+function order(){
+	$.ajax({
+		url: "pages/order/order.php",
+		type: "GET",
+		cache: false,
+		success: function(response){
+			$('#admin_content').html(response);
+			active_nav_menu('order');                
+		}
+	});
+}
 
 function active_nav_menu(nev_id){
 	$(".active").removeClass("active");

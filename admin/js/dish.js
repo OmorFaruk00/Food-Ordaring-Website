@@ -72,22 +72,22 @@ $(document).on("click", "#delete_dish", function(){
 	}
 });
 
-$("#add_more").on("click", function(){
+// $("#add_more").on("click", function(){
 
-	var html = '';
-            html += '<div id="inputFormRow" class="row">';
-            html += '<div class="col-4 mb-2">';
-            html += '<input type="text" class="form-control" placeholder="Enter Attribute" name="attribute[]">';
-            html += '</div>';
-            html += '<div class="col-4">';
-            html += '<input type="text" class="form-control" placeholder="Enter Price" name="price[]">';
-            html += '</div>';
-            html += '<button id="removeRow" type="button" class="btn btn-danger mb-2">Remove</button>';           
-            html += '</div>';
+// 	var html = '';
+//             html += '<div id="inputFormRow" class="row">';
+//             html += '<div class="col-4 mb-2">';
+//             html += '<input type="text" class="form-control" placeholder="Enter Attribute" name="attribute[]">';
+//             html += '</div>';
+//             html += '<div class="col-4">';
+//             html += '<input type="text" class="form-control" placeholder="Enter Price" name="price[]">';
+//             html += '</div>';
+//             html += '<button id="removeRow" type="button" class="btn btn-danger mb-2">Remove</button>';           
+//             html += '</div>';
 
-            $('#add_box').append(html);
+//             $('#add_box').append(html);
            
-});
-$(document).on('click', '#removeRow', function () {
-            $(this).closest('#inputFormRow').remove();
-        });
+// });
+// $(document).on('click', '#removeRow', function () {
+//             $(this).closest('#inputFormRow').remove();
+//         });

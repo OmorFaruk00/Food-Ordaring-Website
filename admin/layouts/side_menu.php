@@ -6,5 +6,6 @@
 		<li id="delivery_boy" ><a onclick="delivery_boy()">delivery boy</a></li>
 		<li id="coupon_code"><a onclick="coupon_code()">coupon code</a></li>
 		<li id="dish"><a onclick="dish()">dish</a></li>
+		<li id="order"><a onclick="order()">order</a></li>
 	</ul>
 </div>

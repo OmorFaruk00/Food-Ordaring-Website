@@ -72,22 +72,16 @@ $(document).on("click", "#delete_dish", function(){
 	}
 });
 
-// $("#add_more").on("click", function(){
+$(document).on("click","#update_dish", function(){
 
-// 	var html = '';
-//             html += '<div id="inputFormRow" class="row">';
-//             html += '<div class="col-4 mb-2">';
-//             html += '<input type="text" class="form-control" placeholder="Enter Attribute" name="attribute[]">';
-//             html += '</div>';
-//             html += '<div class="col-4">';
-//             html += '<input type="text" class="form-control" placeholder="Enter Price" name="price[]">';
-//             html += '</div>';
-//             html += '<button id="removeRow" type="button" class="btn btn-danger mb-2">Remove</button>';           
-//             html += '</div>';
-
-//             $('#add_box').append(html);
-           
-// });
-// $(document).on('click', '#removeRow', function () {
-//             $(this).closest('#inputFormRow').remove();
-//         });
+	var id = $(this).data("id");
+	$("#update_dish_modal").modal('show');
+	$.ajax({
+		url : 'pages/dish/update_dish.php',
+		type : 'POST',
+		data : {update:'', editid:id},
+		success : function(data){
+			$("#dish_modal").html(data);    
+		}
+	});
+});

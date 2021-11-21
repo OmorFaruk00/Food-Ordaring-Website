@@ -10,13 +10,13 @@
 		<div class="modal-content">      
 			<div class="modal-body">
 				<h4 class="text-center mb-3"> Add Dish</h4>
-				<form id="dish_form" method ="POST" autocomplete="off" enctype="multipart/form-data">
+				<form id="dish_form" method ="POST" autocomplete="off" enctype="multipart/form-data">					
 					<div class="form-group">
 						<label>Category</label>
 						<select id="select_category" name="category" class="form-control">
 							<option value="">Select Category</option>											
 						</select>
-					</div>
+					</div>				
 					<div id="coupon_error"></div>
 					<div class="form-group">
 						<label>Dish</label>
@@ -54,9 +54,9 @@
 	</div>
 </div>
 <!-- Update delivery boy modal -->
-<div class="modal fade" id="update_coupon_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="update_dish_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content"  id="update_modal"> 		
+		<div class="modal-content"  id="dish_modal"> 		
 		</div>
 	</div>
 </div>

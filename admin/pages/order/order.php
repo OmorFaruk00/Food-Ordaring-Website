@@ -22,19 +22,19 @@
                             while($row = $result->fetch_assoc()){
                             ?>
                                 <tr>
-                                    <td><?php echo 'ODR00'.$row['order_id']; ?></td>
+                                    <td><?php echo $row['order_id']; ?></td>
                                     <td>
                                     <?php
                                     $dish_code = array_filter(explode(',',$row['dish_id']));
                                     $dish_qty = array_filter(explode(',',$row['dish_qty']));
                                        for($p=0;$p<count($dish_code);$p++){ ?>
-                                        <b>Dish Code: </b><?php echo 'PDR00'.$dish_code[$p]; ?>
+                                        <b>Dish Code: </b><?php echo $dish_code[$p]; ?>
                                         <b>Quantity: </b><?php echo $dish_qty[$p]; ?>
                                         <br>
                                     <?php } ?>
                                     </td>
                                     <td><?php echo array_sum($dish_qty); ?></td>
-                                    <td><?php echo $row['total_amount']; ?></td>
+                                    <td><span>&#2547;</span> <?php echo $row['total_amount']; ?></td>
                                     <td>
                                         <b>ID : </b><?php echo $row['user_id']; ?><br>
                                         <b>Name : </b><?php echo $row['user_name']; ?><br>

@@ -26,7 +26,7 @@ if(isset($_POST['selected_category'])){
 				<?php while($dish_row = $result->fetch_assoc()){  ?> 
 
 					<div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30 shadow"  >                
-						<div class="product-wrapper" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"> 
+						<div class="product-wrapper box_shadow" > 
 							<div class="product-img">                                        
 								<img src="../admin/.<?php echo $dish_row['image']; ?>" alt="Image Not Found" width="auto"; height= "200px">
 								
